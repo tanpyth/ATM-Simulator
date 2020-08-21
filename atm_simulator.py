@@ -1,8 +1,9 @@
-print("hello python learning")
-print ("Hi Tanvi!")
 
+
+#starting Balance
 Balance= 1000
-print("ATM")
+
+print("Welcome to the ATM")
 print("""
 1. Balance
 2. withdraw
@@ -10,15 +11,12 @@ print("""
 4. QUIT
 """)
 
-
+# Ask the user for input
 option=int(input("enter option:"))
 
-
+# Print the balance
 if option==1:
     print("Balance is 1000")
-    
-
-
     
 if option==2:
     print("Balance is 1000")
@@ -30,7 +28,6 @@ if option==2:
         print("no funds in account")
     else:
         print("none withdraw made")
-
     
 if option==3:
     print("Balance is 1000",Balance)
@@ -40,6 +37,7 @@ if option==3:
         print(currentbalance)
     else:
         print("none deposit made")
+
 if option==4:
     exit()
 
