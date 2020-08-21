@@ -1,9 +1,28 @@
-
-
-#starting Balance
 Balance= 1000
+deposit_limit = 10000
 
-print("Welcome to the ATM")
+def withdraw(withdraw_amount):
+    if withdraw_amount < 0:
+        print("Withdraw amount should be greater than zero")
+        return Balance
+    elif withdraw_amount > Balance:
+        print("insufficient in account")
+        return Balance
+    else:
+        newBalance= Balance-withdraw_amount
+        return newBalance
+    
+def deposit(deposit_amount):
+    if deposit_amount<0:
+        print ("invalid deposit amount")
+    elif deposit_amount>deposit_limit:
+        print("deposit limit reached, max limit is - ", deposit_limit)
+    else:
+        deposit=Balance+deposit_amount
+        return deposit
+        
+    
+print("ATM")
 print("""
 1. Balance
 2. withdraw
@@ -11,33 +30,26 @@ print("""
 4. QUIT
 """)
 
-# Ask the user for input
+
 option=int(input("enter option:"))
 
-# Print the balance
+
 if option==1:
     print("Balance is 1000")
+
     
 if option==2:
     print("Balance is 1000")
-    withdraw=float(input("enter withdraw anount"))
-    if withdraw>0:
-        newbalance=(Balance-withdraw)
-        print(newbalance)
-    elif withdraw>Balance:
-        print("no funds in account")
-    else:
-        print("none withdraw made")
+    withdraw_amount=float(input("enter withdraw anount"))
+    print (withdraw(withdraw_amount))
+
     
 if option==3:
     print("Balance is 1000",Balance)
-    DEPOSIT=float(input("enter DEPOSIT amount"))
-    if DEPOSIT>0:
-        currentbalance=(Balance+DEPOSIT)
-        print(currentbalance)
-    else:
-        print("none deposit made")
-
+    deposit_amount=float(input("enter deposit amount"))
+    print(deposit(deposit_amount))
+    
 if option==4:
     exit()
+
 
